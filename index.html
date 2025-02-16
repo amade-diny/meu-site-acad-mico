@@ -38,6 +38,25 @@
         .services li {
             margin: 10px 0;
         }
+        .contact-form {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +76,15 @@
         
         <h2>Entre em Contato</h2>
         <p>Solicite um orçamento ou tire suas dúvidas pelo WhatsApp.</p>
-        <a class="button" href="https://wa.me/seunumerodetelefone">Fale Conosco no WhatsApp</a>
+        <a class="button" href="https://wa.me/258846888971">Fale Conosco no WhatsApp</a>
+        
+        <h2>Envie uma Mensagem</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <textarea name="message" placeholder="Digite sua mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 </body>
 </html>
