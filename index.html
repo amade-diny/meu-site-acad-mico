@@ -9,19 +9,21 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: url('https://source.unsplash.com/1600x900/?education,technology') no-repeat center center fixed;
+            background-size: cover;
             text-align: center;
+            color: white;
         }
         .container {
             width: 80%;
             margin: auto;
             padding: 20px;
-            background: white;
+            background: rgba(0, 0, 0, 0.8);
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
-        h1 { color: #333; }
-        p { color: #555; }
+        h1 { color: #ffcc00; }
+        p { color: #ddd; }
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -34,6 +36,7 @@
         .services {
             text-align: left;
             margin-top: 20px;
+            color: white;
         }
         .services li {
             margin: 10px 0;
@@ -41,6 +44,7 @@
         .contact-form {
             margin-top: 20px;
             text-align: left;
+            color: white;
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
@@ -50,12 +54,23 @@
             border-radius: 5px;
         }
         .contact-form button {
-            background: #28a745;
-            color: white;
+            background: #ffcc00;
+            color: black;
             border: none;
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
+        }
+        .ads {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .ads img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -85,6 +100,13 @@
             <textarea name="message" placeholder="Digite sua mensagem" rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+        
+        <div class="ads">
+            <h2>Publicidade</h2>
+            <p>Ofertas especiais para estudantes e professores! Digitalize e formate seus trabalhos com qualidade e rapidez.</p>
+            <img src="https://source.unsplash.com/300x200/?business,advertising" alt="Publicidade">
+            <img src="https://source.unsplash.com/300x200/?education,students" alt="Publicidade">
+        </div>
     </div>
 </body>
 </html>
