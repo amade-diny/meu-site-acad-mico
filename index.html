@@ -46,7 +46,7 @@
             text-align: left;
             color: white;
         }
-        .contact-form input, .contact-form textarea {
+        .contact-form input, .contact-form select, .contact-form textarea {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -61,17 +61,6 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .ads {
-            margin-top: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .ads img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
-        }
     </style>
 </head>
 <body>
@@ -79,41 +68,22 @@
         <h1>Academia Digital - Suporte Acadêmico</h1>
         <p>Oferecemos serviços de digitalização, formatação, resolução de testes e muito mais!</p>
         
-        <h2>Nossos Serviços</h2>
-        <ul class="services">
-            <li>🖥️ Digitação e formatação de trabalhos acadêmicos</li>
-            <li>📄 Revisão e correção de textos</li>
-            <li>📊 Criação de apresentações em PowerPoint</li>
-            <li>📝 Resolução de testes e exercícios</li>
-            <li>📑 Conversão e edição de arquivos</li>
-            <li>📚 Consultoria acadêmica</li>
-            <li>📊 Análise de dados de pesquisas científicas</li>
-            <li>📖 Elaboração de fichas de exercícios para professores do ensino médio em menos de 1h para todas as disciplinas </li>
-        </ul>
-        
-        <h2>Localização</h2>
-        <p><strong>Endereço:</strong> Nampula, Muahivire</p>
-        <p><strong>Contato:</strong> 846888971 / 872888971</p>
-        <p><strong>Email:</strong> amade.mucusserima63@gmail.com</p>
-        
-        <h2>Entre em Contato</h2>
-        <p>Solicite um orçamento ou tire suas dúvidas pelo WhatsApp.</p>
-        <a class="button" href="https://wa.me/258846888971">Fale Conosco no WhatsApp</a>
-        
         <h2>Complete o formulário para nos contactar mais uma resposta rápida</h2>
         <form class="contact-form" action="https://formspree.io/f/xnnjgkkd" method="POST">
             <input type="text" name="name" placeholder="Seu Nome" required>
-            <input type="text" name="contact" placeholder="Seu Contato" required>
-            <textarea name="message" placeholder="Digite sua mensagem" rows="5" required></textarea>
+            <input type="text" name="contact" placeholder="Seu Contato (WhatsApp ou Telefone)" required>
+            <select name="service" required>
+                <option value="">Selecione o Serviço</option>
+                <option value="digitalizacao">Digitalização e Formatação</option>
+                <option value="testes">Resolução de Testes</option>
+                <option value="fichas">Criação de Fichas de Exercícios</option>
+                <option value="revisao">Revisão e Análise de Pesquisas</option>
+                <option value="consultoria">Consultoria Acadêmica</option>
+            </select>
+            <textarea name="message" placeholder="Descreva seu pedido" rows="5" required></textarea>
+            <input type="file" name="attachment">
             <button type="submit">Enviar</button>
         </form>
-        
-        <div class="ads">
-            <h2>Publicidade</h2>
-            <p>Ofertas especiais para estudantes e professores! Digitalize e formate seus trabalhos com qualidade e rapidez.</p>
-            <img src="https://source.unsplash.com/300x200/?business,advertising" alt="Publicidade">
-            <img src="https://source.unsplash.com/300x200/?education,students" alt="Publicidade">
-        </div>
     </div>
 </body>
 </html>
