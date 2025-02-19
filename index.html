@@ -46,7 +46,7 @@
             text-align: left;
             color: white;
         }
-        .contact-form input, .contact-form select, .contact-form textarea {
+        .contact-form input, .contact-form textarea, .contact-form select {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -61,12 +61,46 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Academia Digital - Suporte Acadêmico</h1>
         <p>Oferecemos serviços de digitalização, formatação, resolução de testes e muito mais!</p>
+        
+        <h2>Nossos Serviços</h2>
+        <ul class="services">
+            <li>🖥️ Digitação e formatação de trabalhos acadêmicos</li>
+            <li>📄 Revisão e correção de textos</li>
+            <li>📊 Criação de apresentações em PowerPoint</li>
+            <li>📝 Resolução de testes e exercícios</li>
+            <li>📑 Conversão e edição de arquivos</li>
+            <li>📚 Consultoria acadêmica</li>
+            <li>📊 Análise de dados de pesquisas científicas</li>
+            <li>📖 Elaboração de fichas de exercícios para professores do ensino médio em menos de 1h para todas as disciplinas</li>
+        </ul>
+        
+        <h2>Localização</h2>
+        <p><strong>Endereço:</strong> Nampula, Muahivire</p>
+        <p><strong>Contato:</strong> 846888971 / 872888971</p>
+        <p><strong>Email:</strong> amade.mucusserima63@gmail.com</p>
+        
+        <h2>Entre em Contato</h2>
+        <p>Solicite um orçamento ou tire suas dúvidas pelo WhatsApp.</p>
+        <a class="button" href="https://wa.me/258846888971">Fale Conosco no WhatsApp</a>
         
         <h2>Complete o formulário para nos contactar mais uma resposta rápida</h2>
         <form class="contact-form" action="https://formspree.io/f/xnnjgkkd" method="POST">
@@ -80,10 +114,19 @@
                 <option value="revisao">Revisão e Análise de Pesquisas</option>
                 <option value="consultoria">Consultoria Acadêmica</option>
             </select>
-            <textarea name="message" placeholder="Descreva seu pedido" rows="5" required></textarea>
-            <input type="file" name="attachment">
+            <textarea name="message" placeholder="Digite sua mensagem" rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+        
+        <div class="ads">
+            <h2>Publicidade</h2>
+            <p>Ofertas especiais para estudantes e professores! Digitalize e formate seus trabalhos com qualidade e rapidez.</p>
+            <img src="https://source.unsplash.com/300x200/?business,advertising" alt="Publicidade">
+            <img src="https://source.unsplash.com/300x200/?education,students" alt="Publicidade">
+        </div>
     </div>
+    
+    <!-- Botão flutuante do WhatsApp -->
+    <a class="floating-whatsapp" href="https://wa.me/258846888971" target="_blank">📲</a>
 </body>
 </html>
