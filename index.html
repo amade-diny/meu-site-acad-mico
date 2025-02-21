@@ -13,7 +13,7 @@
             text-align: center;
         }
         .container {
-            max-width: 400px;
+            max-width: 600px;
             margin: auto;
             background: white;
             padding: 20px;
@@ -60,6 +60,23 @@
         input[type="submit"]:hover {
             background-color: #218838;
         }
+        .about, .services, .contact {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .whatsapp {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .whatsapp a {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -70,8 +87,6 @@
     <div class="container">
         <h2>Cadastro de Indicação</h2>
         <form action="https://formspree.io/f/xnnjgkkd" method="POST">
-
-
             <label for="nome">Seu Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -86,6 +101,35 @@
 
             <input type="submit" value="Enviar">
         </form>
+        
+        <div class="about">
+            <h2>Sobre a Academia Digital</h2>
+            <p>A Academia Digital - Suporte Acadêmico é uma plataforma dedicada a auxiliar estudantes e profissionais no desenvolvimento de seus trabalhos acadêmicos. Nossa missão é fornecer suporte personalizado para garantir qualidade e eficiência na elaboração de documentos e projetos acadêmicos.</p>
+        </div>
+        
+        <div class="services">
+            <h2>Serviços Prestados</h2>
+            <ul>
+                <li>Digitação e formatação de trabalhos acadêmicos</li>
+                <li>Revisão e correção de textos</li>
+                <li>Criação de apresentações em PowerPoint</li>
+                <li>Resolução de testes e exercícios</li>
+                <li>Conversão e edição de arquivos</li>
+                <li>Consultoria acadêmica</li>
+                <li>Elaboração de fichas de exercícios</li>
+                <li>Desenvolvimento de projetos de TCC</li>
+            </ul>
+        </div>
+        
+        <div class="about">
+            <h2>Nossos Termos e Compromisso</h2>
+            <p>Nosso compromisso é garantir a entrega de serviços de alta qualidade, respeitando os prazos e exigências acadêmicas. Todos os trabalhos são desenvolvidos com ética, responsabilidade e confidencialidade.</p>
+        </div>
+        
+        <div class="whatsapp">
+            <h2>Fale Conosco no WhatsApp</h2>
+            <a href="https://wa.me/258846888971" target="_blank">Clique aqui para conversar</a>
+        </div>
     </div>
 </body>
 </html>
