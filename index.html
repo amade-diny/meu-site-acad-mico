@@ -2,9 +2,8 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadastro de Indicação - Academia Digital</title>
-  <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Acadêmico - Academia Digital</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,76 +11,24 @@
       padding: 0;
       background-color: #f4f4f4;
       color: #333;
-      transition: background-color 0.3s, color 0.3s;
     }
-    body.dark {
-      background-color: #121212;
-      color: #f4f4f4;
-    }
-    .header {
-      background-color: #007bff;
-      color: white;
-      padding: 15px;
-      font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .header img {
-      height: 50px;
-      margin-right: 15px;
-    }
-    .theme-toggle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #333;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-    .tabs button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .tabs button:hover {
-      background: #0056b3;
-    }
-    .tab-content {
-      display: none;
-      max-width: 700px;
-      margin: 20px auto;
-      background: white;
+    .container {
+      max-width: 500px;
+      margin: 80px auto;
       padding: 20px;
+      background: white;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .dark .tab-content {
-      background: #1e1e1e;
-    }
-    .tab-content.active {
-      display: block;
+    .container h2 {
+      text-align: center;
     }
     label {
-      font-weight: bold;
       display: block;
       margin-top: 10px;
+      font-weight: bold;
     }
-    input[type="text"], input[type="submit"] {
+    input[type="text"], input[type="password"], input[type="submit"] {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -89,124 +36,117 @@
       border-radius: 5px;
     }
     input[type="submit"] {
-      background-color: #28a745;
+      background-color: #007bff;
       color: white;
       border: none;
+      cursor: pointer;
       margin-top: 15px;
     }
     input[type="submit"]:hover {
-      background-color: #218838;
+      background-color: #0056b3;
     }
-    ul {
-      padding-left: 20px;
+    .tab {
+      display: none;
     }
-    .whatsapp a {
-      display: inline-block;
-      background-color: #25D366;
+    .tab.active {
+      display: block;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #007bff;
       color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      padding: 10px;
     }
-    .success-message {
-      color: green;
+    .nav button {
+      background: none;
+      border: none;
+      color: white;
       font-weight: bold;
+      cursor: pointer;
+    }
+    .submenu {
       margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .submenu button {
+      flex: 1;
+      padding: 8px;
+      background: #e0e0e0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 Tema</button>
-  <div class="header">
-    <img src="logo.png" alt="Academia Digital - Suporte Acadêmico" />
-    <span>Academia Digital - Suporte Acadêmico</span>
-  </div>
-
-  <div class="tabs">
-    <button onclick="openTab('indicacao')">📝 Indicação</button>
-    <button onclick="openTab('servicos')">💼 Serviços</button>
-    <button onclick="openTab('sobre')">📖 Sobre</button>
-    <button onclick="openTab('contato')">📱 Contato</button>
-  </div>
-
-  <div id="indicacao" class="tab-content active">
-    <h2>Cadastro de Indicação</h2>
-    <form id="form-indicacao" action="https://formspree.io/f/xnnjgkkd" method="POST">
-      <label for="nome_cliente">Nome do Cliente:</label>
-      <input type="text" id="nome_cliente" name="nome_cliente" required>
-
-      <label for="numero_cliente">Número do Cliente:</label>
-      <input type="text" id="numero_cliente" name="numero_cliente" required>
-
-      <label for="nome_indicador">Nome do Indicador:</label>
-      <input type="text" id="nome_indicador" name="nome_indicador" required>
-
-      <label for="numero_indicador">Número do Indicador (e-Mola ou M-Pesa):</label>
-      <input type="text" id="numero_indicador" name="numero_indicador" required pattern="\\d{9}" maxlength="9" placeholder="Ex: 84xxxxxxx">
-
-      <input type="submit" value="Enviar">
-      <div id="success-message" class="success-message"></div>
+  <div class="container" id="login-container">
+    <h2>Login do Estudante</h2>
+    <form id="login-form">
+      <label for="usuario">Usuário:</label>
+      <input type="text" id="usuario" required />
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" required />
+      <input type="submit" value="Entrar" />
     </form>
   </div>
 
-  <div id="servicos" class="tab-content">
-    <h2>Serviços Prestados</h2>
-    <ul>
-      <li>Digitação e formatação de trabalhos acadêmicos</li>
-      <li>Revisão e correção de textos</li>
-      <li>Criação de apresentações em PowerPoint</li>
-      <li>Resolução de testes e exercícios</li>
-      <li>Conversão e edição de arquivos</li>
-      <li>Consultoria acadêmica</li>
-      <li>Elaboração de fichas de exercícios</li>
-      <li>Desenvolvimento de projetos de TCC e monografia</li>
-      <li>Aulas e explicações presenciais e online</li>
-    </ul>
-  </div>
+  <div id="portal" style="display:none;">
+    <div class="nav">
+      <button onclick="abrirAba('dashboard')">Painel</button>
+      <button onclick="abrirAba('materiais')">Materiais</button>
+      <button onclick="abrirAba('exercicios')">Exercícios</button>
+      <button onclick="abrirAba('perfil')">Perfil</button>
+    </div>
 
-  <div id="sobre" class="tab-content">
-    <h2>Sobre a Academia Digital</h2>
-    <p>A Academia Digital é uma plataforma dedicada a auxiliar estudantes no desenvolvimento de seus trabalhos acadêmicos com ética, qualidade e pontualidade.</p>
-  </div>
+    <div id="dashboard" class="tab active">
+      <h2>Bem-vindo ao Portal de Aprendizagem!</h2>
+      <p>Aqui você encontrará seus cursos e progresso acadêmico.</p>
+    </div>
 
-  <div id="contato" class="tab-content whatsapp">
-    <h2>Fale Conosco no WhatsApp</h2>
-    <a href="https://wa.me/258846888971" target="_blank">Clique aqui para conversar</a>
+    <div id="materiais" class="tab">
+      <h2>Materiais de Estudo</h2>
+      <div class="submenu">
+        <button onclick="alert('PDFs carregados!')">PDFs</button>
+        <button onclick="alert('Vídeos carregados!')">Vídeos</button>
+        <button onclick="alert('Slides carregados!')">Slides</button>
+      </div>
+    </div>
+
+    <div id="exercicios" class="tab">
+      <h2>Exercícios</h2>
+      <div class="submenu">
+        <button onclick="alert('Questionários disponíveis!')">Questionários</button>
+        <button onclick="alert('Trabalhos disponíveis!')">Trabalhos</button>
+      </div>
+    </div>
+
+    <div id="perfil" class="tab">
+      <h2>Meu Perfil</h2>
+      <p>Nome: <strong>Estudante</strong></p>
+      <p>Email: estudante@academia.com</p>
+    </div>
   </div>
 
   <script>
-    function openTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
-
-    document.getElementById('form-indicacao').addEventListener('submit', function (e) {
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const form = e.target;
-      fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          document.getElementById('success-message').innerText = "Indicação enviada com sucesso!";
-          form.reset();
-        } else {
-          document.getElementById('success-message').innerText = "Erro ao enviar. Tente novamente.";
-        }
-      }).catch(() => {
-        document.getElementById('success-message').innerText = "Erro de conexão.";
-      });
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+      if(usuario === 'aluno' && senha === '1234') {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('portal').style.display = 'block';
+      } else {
+        alert('Usuário ou senha inválido.');
+      }
     });
+
+    function abrirAba(abaId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(abaId).classList.add('active');
+    }
   </script>
 </body>
 </html>
